@@ -1,0 +1,15 @@
+server:
+  port: 8765
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+zuul:
+  routes:
+#    travel-web-portal: /**
+    travel-auth-server: /auth/**
+    travel-country-service: /api/country-service/**
+    travel-attraction-service: /api/attraction-service/**
+    travel-favorite-service: /api/favorite-service/**
